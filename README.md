@@ -6,7 +6,7 @@ Career Dashboard is a full-stack MERN learning project built to practice authent
 
 This project focuses on learning architecture, state management, API integration, and deployment, rather than production-level polish. The goal was to ship a functional end-to-end system and document tradeoffs honestly.
 
-Tech Stack
+🛠️ Tech Stack
 Frontend
 
 React + TypeScript
@@ -49,7 +49,7 @@ Helmet
 
 Environment-based Morgan logging
 
-Features
+✨ Features
 Authentication & User Flow
 
 Public home page
@@ -106,7 +106,7 @@ useMutation for delete & update
 
 Prefetching job details on hover for faster navigation
 
-Project Structure
+🗂️ Project Structure
 Root
 career-dashboard-mern/
 ├── frontend/
@@ -146,7 +146,7 @@ server.js
 Backend structure follows:
 route → controller → model
 
-Known Limitations / Tradeoffs
+⚠️ Known Limitations / Tradeoffs
 
 File and folder structure can still be improved further
 
@@ -172,7 +172,7 @@ No automated testing
 
 These issues were intentionally documented instead of refactored, in line with the learning-first approach of this portfolio.
 
-Future Improvements
+🚀 Future Improvements
 
 Improve separation of concerns in frontend and backend logic
 
@@ -186,17 +186,17 @@ Further simplify and standardize folder structure
 
 Add basic test coverage
 
-Live Demo
+🌍 Live Demo
 
 Frontend: Deployed on Vercel
 
 Backend: Deployed on Render
 
-Link: https://career-dashboard-mern.vercel.app/
+👉 https://career-dashboard-mern.vercel.app/
 
 ✅ Frontend, backend, and MongoDB Atlas are fully connected and working together.
 
-Environment Variables
+🔐 Environment Variables
 Frontend
 VITE_BACKEND_URL=
 
@@ -208,7 +208,7 @@ JWT_REFRESH_SECRET=
 NODE_ENV=
 CLIENT_URL=
 
-Learning Outcomes
+📚 Learning Outcomes
 
 Built a full MERN authentication flow with refresh token rotation
 
@@ -222,7 +222,7 @@ Learned to deploy and connect frontend, backend, and database
 
 Understood tradeoffs between speed, structure, and correctness in learning projects
 
-Disclaimer
+📎Disclaimer
 
 This is a learning project, not a production-ready application.
 The focus is on demonstrating real development progress, architectural understanding, and honest documentation of limitations rather than polish or perfection.

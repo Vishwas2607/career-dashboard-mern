@@ -14,29 +14,25 @@ app.use(helmet());
 
 const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean);
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // Postman / server-to-server
-      if (allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-  })
-);
+const corsOptions = {
+  origin: function (origin, callback) {
 
-app.options("*", cors());
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+};
 
+app.use(cors(corsOptions));
 
-app.options("*", cors({
-  origin: allowedOrigins,
-  credentials: true
-}));
+app.options("(.*)", cors(corsOptions));
 
 
 if(process.env.NODE_ENV=== "development"){

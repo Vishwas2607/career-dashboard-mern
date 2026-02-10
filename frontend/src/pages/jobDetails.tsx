@@ -32,7 +32,7 @@ export default function JobDetails() {
             {isLoading && <Loader/>}
             {error && <p className="text-red-600 font-semibold dark:text-red-400 mt-10" role="alert" aria-live="assertive">{error.message}</p>}
             {savedJob && (
-                <div className="flex flex-col gap-5 mt-5">
+                <div className="flex flex-col gap-5 mt-5 w-full">
                 <h3 className="ml-1 text-xl font-bold px-5 dark:text-white/85 transition-all duration-500 ease-in-out text-black capitalize">Company Name: {savedJob.companyName}</h3>
                 <p className="w-full border-black/30 border-t-2 border-b-2 py-2 px-5 bg-white/30 dark:border-white/30 dark:bg-black/20 backdrop-blur-md transition-all duration-500 ease-in-out capitalize"><strong>Role: </strong>{savedJob.role}</p>
                 <p className="w-full border-black/30 border-t-2 border-b-2 py-2 px-5 bg-white/30 dark:border-white/30 dark:bg-black/20 backdrop-blur-md transition-all duration-500 ease-in-out capitalize"><strong>Status: </strong>{savedJob.status}</p>

@@ -9,7 +9,7 @@ export default function useApiCalls(){
 
     const logout = async() => {
         try{
-            await fetch(`${backendUrl}/auth/logout`,{
+            await fetch(`${backendUrl}/api/auth/logout`,{
                 method: "POST",
                 credentials: "include",
             });
@@ -27,7 +27,7 @@ export default function useApiCalls(){
      const refreshAccessToken = async (): Promise<boolean> => {
             try{
                 const response = await fetch(
-                    `${backendUrl}/auth/token/refresh`,
+                    `${backendUrl}/api/auth/token/refresh`,
                     {method: "POST",
                     credentials: "include"
                     },
@@ -41,7 +41,7 @@ export default function useApiCalls(){
 
     const callApi = async <T, R=any>({link,method = "GET", data = null}: ApiProps<T>, retry = false):Promise<R> => {
 
-            const baseUrl = `${backendUrl}/${link}`;
+            const baseUrl = `${backendUrl}/api/${link}`;
             const isAuthRoute = link.startsWith("auth/");
 
             const response = await fetch(baseUrl,
